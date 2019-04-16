@@ -6,7 +6,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "npm run build && push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "npm run build && push-dir --dir=dist --branch=gh-pages --cleanup",
+    "commit": "git add . && git commit -m",
+    "push": "git push",
+    "pushDeploy": "npm run push && npm run deploy"
   },
   "dependencies": {
     "core-js": "^2.6.5",
