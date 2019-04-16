@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        Landing Page
+        Landing Page test2
     </div>
 </template>
 
