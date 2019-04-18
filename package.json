@@ -6,10 +6,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "npm run build && push-dir --dir=dist --branch=gh-pages --cleanup",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "commit": "git add . && git commit -m",
     "push": "git push origin master",
-    "pushDeploy": "npm run push && npm run deploy"
+    "PBD": "npm run push && npm run build && npm run deploy"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -23,6 +23,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "push-dir": "^0.4.1",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
