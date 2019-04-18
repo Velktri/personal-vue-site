@@ -9,4 +9,4 @@ export const routes = [
 
 export const mode = 'history'
 
-export const base = (process.env.NODE_ENV === 'production') ? '/personal-vue-site' : '/'
+export const base = (process.env.NODE_ENV === 'production') ? '/personal-vue-site/' : '/'
