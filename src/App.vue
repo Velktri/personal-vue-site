@@ -1,18 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Landing />
+    <page-header :headerData="HeaderData"/>
+    <router-view />
   </div>
 </template>
 
 <script>
-import Landing from './components/Landing.vue'
+import siteHeader from './components/Layout/Header.vue'
 
 export default {
-  name: 'app',
-  components: {
-    Landing
-  }
+    name: 'app',
+
+    components: {
+        'page-header': siteHeader
+    },
+
+    data() {
+        return {
+            HeaderData: [
+                { label: 'Home', route: '/', bIsIcon: false },
+                { label: 'About', route: '/about', bIsIcon: false },
+                { label: 'Test', route: '/test', bIsIcon: false },
+            ]
+        }
+    }
 }
 </script>
 
