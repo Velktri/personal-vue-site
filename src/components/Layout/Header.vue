@@ -1,10 +1,19 @@
 <template>
 <div class="header-color">
-    <ul class="flex container header">
-        <li v-for="(headerElement, i) in headerData" :key="i" >
-            <router-link :to="headerElement.route"> {{ headerElement.label }} </router-link>
-        </li>
-    </ul>
+    <div class="flex container header">
+        <ul class="flex">
+            <li v-for="(headerElement, i) in headerData" :key="i" >
+                <router-link class="header-fonts" :to="headerElement.route"> {{ headerElement.label }} </router-link>
+            </li>
+        </ul>
+
+        <div class="spacer"></div>
+
+        
+        <a href="https://velktri.github.io/personal-site" >
+            <img src="@/assets/react.svg" class="header-icon">
+        </a>
+    </div>
 </div>
 
 </template>
@@ -35,8 +44,16 @@ export default {
     height: 60px;
 }
 
+.header-fonts {
+    font-size: 1.2rem;
+}
+
 .header-color {
     background-color: darkcyan;
+}
+
+.spacer {
+    flex-grow: 1;
 }
 
 .flex {
@@ -58,6 +75,10 @@ ul {
 
 ul a {
     text-decoration: none;
+}
+
+.header-icon {
+    height: 2rem;
 }
 
 </style>

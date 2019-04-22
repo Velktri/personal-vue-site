@@ -1,11 +1,14 @@
-import Landing from './components/Landing.vue'
-import About from './components/About.vue'
+import Landing from './pages/Landing.vue'
+import About from './pages/About.vue'
+import Projects from './pages/Projects.vue'
+import Reference from './pages/Reference.vue'
 
 const routeData = {
     routes: [
         { path: '/', component: Landing },
         { path: '/about', component: About },
-        //{ path: '/test', component: Test }
+        { path: '/reference', component: Reference },
+        { path: '/projects', component: Projects }
     ],
     
     mode: 'history',

@@ -3,7 +3,6 @@
         <div class="bg-top">
             <div class="flex section-top container">
                 <div class="content-top">
-                    <a href="https://velktri.github.io/personal-site">React Site</a>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laboriosam officia ab fuga! 
                     Quisquam, adipisci incidunt soluta inventore quis nam ab tempora tenetur quidem expedita deserunt, 
                     itaque cupiditate magnam, at et praesentium quasi. Doloremque odio magni non quas, animi quod.

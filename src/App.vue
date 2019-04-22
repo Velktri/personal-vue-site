@@ -20,7 +20,8 @@ export default {
             HeaderData: [
                 { label: 'Home', route: '/', bIsIcon: false },
                 { label: 'About', route: '/about', bIsIcon: false },
-                { label: 'Test', route: '/test', bIsIcon: false },
+                { label: 'Projects', route: '/projects', bIsIcon: false },
+                { label: 'Reference Journal', route: '/reference', bIsIcon: false },
             ]
         }
     }
