@@ -1,15 +1,16 @@
 <template>
-    <div>
+    <div class="flex column page-height">
         <div class="bg-top">
-            <div class="flex section-top container">
+            <div class="flex align-center section-top container">
                 <div class="content-top">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laboriosam officia ab fuga! 
                     Quisquam, adipisci incidunt soluta inventore quis nam ab tempora tenetur quidem expedita deserunt, 
                     itaque cupiditate magnam, at et praesentium quasi. Doloremque odio magni non quas, animi quod.
+                    {{ testData }}
                 </div>
 
                 <div class="image-top">
-                    test
+                    picture
                 </div>
             </div>
         </div>
@@ -26,47 +27,44 @@
 
 <script>
 export default {
+    name: 'Landing',
 
+    data() {
+        return {
+            testData: 'Im a Test!'
+        }
+    }
 }
 </script>
 
-<style>
+<style lang='sass'>
+.content-top 
+    padding: 20px
+    line-height: 2.5rem
+    text-align: justify
+    font-size: 1.5rem
+    font-family: Calibri, Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif
 
-.flex {
-    display: flex;
-    align-items: center;
-}
+.section-top 
+    height: 500px
 
-.content-top {
-    padding: 20px;
-    line-height: 2.5rem;
-    text-align: justify;
-    font-size: 1.5rem;
-    font-family: Calibri, Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
-}
+.bg-top
+    background-color: $c-2
+    width: 100%
 
-.section-top {
-    height: 500px;
-}
+.image-top
+    max-width: 300px
+    min-width: 300px
+    height: 300px
+    background-color: lighten(red, 30%)
 
-.bg-top {
-    background-color: rgb(94, 94, 199);
-}
+.section-mid
+    min-height: 500px
+    width: 100%
+    background-color: $cl-1
 
-.image-top {
-    max-width: 300px;
-    min-width: 300px;
-    height: 300px;
-    background-color: rgb(105, 41, 54)
-}
-
-.section-mid {
-    height: 500px;
-    background-color: rgb(114, 214, 114);
-}
-
-.footer {
-    height: 200px;
-    background-color: rgb(136, 136, 136);
-}
+.footer
+    height: 100%
+    width: 100%
+    background-color: $cl-3
 </style>

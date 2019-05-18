@@ -1,0 +1,112 @@
+@mixin spacings($spacings)
+    $spacingTypes: 'padding', 'margin'
+
+    @for $j from 0 to length($spacingTypes)
+        $spacingElement: nth($spacingTypes, $j + 1)
+        $typeCutoff: str-slice($spacingElement, 0, 1)
+        @for $i from 0 to $spacings
+            .#{$typeCutoff}t-#{$i}
+                #{$spacingElement}-top: #{$i}rem
+
+            .#{$typeCutoff}r-#{$i}
+                #{$spacingElement}-right: #{$i}rem
+
+            .#{$typeCutoff}b-#{$i}
+                #{$spacingElement}-bottom: #{$i}rem
+
+            .#{$typeCutoff}l-#{$i}
+                #{$spacingElement}-left: #{$i}rem
+
+            .#{$typeCutoff}x-#{$i}
+                #{$spacingElement}: 0rem #{$i}rem
+
+            .#{$typeCutoff}y-#{$i}
+                #{$spacingElement}: #{$i}rem 0rem
+
+            .#{$typeCutoff}a-#{$i}
+                #{$spacingElement}: #{$i}rem
+
+
+@include spacings(5)
+
+
+
+//           ******* COLOR ********           //
+//  "Lonely Is The Night" Color Palette
+$colorShading: 10%
+
+$c-1: hsl(150, 60, 48) //rgb(49, 122, 85)  //green
+$cl-1: lighten($c-1, $colorShading)
+$cd-1: darken($c-1, $colorShading)
+
+
+$c-2: hsl(178, 61, 35) //rgb(35, 89, 86)   //darkGreen
+$cl-2: lighten($c-2, $colorShading)
+$cd-2: darken($c-2, $colorShading)
+
+
+$c-3: hsl(212, 62, 36) //rgb(35, 61, 91)   //blueGreen
+$cl-3: lighten($c-3, $colorShading)
+$cd-3: darken($c-3, $colorShading)
+
+
+$c-4: hsl(243, 60, 35) //rgb(38, 35, 88)   //blue
+$cl-4: lighten($c-4, $colorShading)
+$cd-4: darken($c-4, $colorShading)
+
+
+$c-5: hsl(256, 80, 22) //rgb(31, 11, 55)   //darkBlue
+$cl-5: lighten($c-5, $colorShading)
+$cd-5: darken($c-5, $colorShading)
+
+
+//           ******* COMMON ********           //
+$headerHeight: 3.5rem
+$pageHeight: calc(100vh - #{$headerHeight})
+
+.page-height
+    height: $pageHeight
+
+li
+    list-style: none
+
+a
+    text-decoration: none
+    color: white
+
+ul
+    margin: 0px
+    padding: 0px
+
+.container
+    max-width: 1200px
+    margin: auto
+
+
+//           ******* FLEXBOX ********           //
+.flex
+    display: flex
+
+.row
+    flex-direction: row
+
+.column
+    flex-direction: column
+
+.align-center
+    align-items: center
+
+.justify-end
+    justify-content: flex-end
+
+.wrap
+    flex-wrap: wrap
+
+.grow-9
+    flex-grow: 9
+
+.grow-3
+    flex-grow: 3
+
+.spacer
+    flex-grow: 1

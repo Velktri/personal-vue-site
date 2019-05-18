@@ -1,15 +1,14 @@
 <template>
 <div class="header-color">
-    <div class="flex container header">
+    <div class="flex align-center container header">
         <ul class="flex">
-            <li v-for="(headerElement, i) in headerData" :key="i" >
+            <li class='pr-1' v-for="(headerElement, i) in headerData" :key="i" >
                 <router-link class="header-fonts" :to="headerElement.route"> {{ headerElement.label }} </router-link>
             </li>
         </ul>
 
         <div class="spacer"></div>
 
-        
         <a href="https://velktri.github.io/personal-site" >
             <img src="@/assets/react.svg" class="header-icon">
         </a>
@@ -39,46 +38,19 @@ export default {
 }
 </script>
 
-<style>
-.header {
-    height: 60px;
-}
 
-.header-fonts {
-    font-size: 1.2rem;
-}
+<style lang="sass">
+.header
+    height: $headerHeight
 
-.header-color {
-    background-color: darkcyan;
-}
+.header-fonts
+    font-size: 1.2rem
+    text-decoration-color: black
 
-.spacer {
-    flex-grow: 1;
-}
+.header-color
+    background-image: linear-gradient(to right, $c-5, $cd-1)
 
-.flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-}
-
-li {
-    list-style: none;
-    padding: 5px 10px;
-}
-
-ul {
-    margin: 0px;
-    padding: 0px;
-}
-
-ul a {
-    text-decoration: none;
-}
-
-.header-icon {
-    height: 2rem;
-}
+.header-icon
+    height: 2rem
 
 </style>
