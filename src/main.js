@@ -14,14 +14,4 @@ new Vue({
     render: h => h(App),
     store,
     router,
-    created () {
-        if (sessionStorage.redirect) {
-            let redirect = sessionStorage.redirect
-            delete sessionStorage.redirect
-            if (redirect != location.href) {
-                history.replaceState(null, null, redirect) //this.$router.push(redirect)
-            }
-
-        }
-    }
 }).$mount('#app')
