@@ -1,7 +1,7 @@
 <template>
 <div class="header-color">
     <div class="flex align-center container header">
-        <ul class="flex">
+        <ul class="flex align-center pl-2">
             <li class='pr-1' v-for="(headerElement, i) in headerData" :key="i" >
                 <router-link class="header-fonts" :to="headerElement.route"> {{ headerElement.label }} </router-link>
             </li>
@@ -9,7 +9,7 @@
 
         <div class="spacer"></div>
 
-        <a href="https://velktri.github.io/personal-site" >
+        <a class="pr-1" href="https://velktri.github.io/personal-site" >
             <img src="@/assets/react.svg" class="header-icon">
         </a>
     </div>

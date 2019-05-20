@@ -1,7 +1,7 @@
 <template>
     <div class="projects-bg">
         <div class="container page-height">
-            <ul class="flex wrap pt-1">
+            <ul class="flex justify-center wrap pt-1">
                 <li class="pa-1 ma-0" v-for="(element, i) in ProjectList" :key=i>
                     <summ :title="element" />
                 </li>

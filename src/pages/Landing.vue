@@ -1,17 +1,21 @@
 <template>
     <div class="flex column page-height">
         <div class="bg-top">
-            <div class="flex align-center section-top container">
-                <div class="content-top">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laboriosam officia ab fuga! 
-                    Quisquam, adipisci incidunt soluta inventore quis nam ab tempora tenetur quidem expedita deserunt, 
-                    itaque cupiditate magnam, at et praesentium quasi. Doloremque odio magni non quas, animi quod.
-                    {{ testData }}
-                </div>
+            <div class="flex wrap reverse align-center section-top container">
 
-                <div class="image-top">
+                <div class="image-top sm12 md12 lg4">
                     picture
                 </div>
+
+                <div class="content-top sm12 md12 lg8 pa-0">
+                    <div class="px-1">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laboriosam officia ab fuga! 
+                        Quisquam, adipisci incidunt soluta inventore quis nam ab tempora tenetur quidem expedita deserunt, 
+                        itaque cupiditate magnam, at et praesentium quasi. Doloremque odio magni non quas, animi quod.
+                        {{ testData }}
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -45,16 +49,14 @@ export default {
     font-size: 1.5rem
     font-family: Calibri, Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif
 
-.section-top 
-    height: 500px
+//.section-top
 
 .bg-top
     background-color: $c-2
     width: 100%
 
 .image-top
-    max-width: 300px
-    min-width: 300px
+
     height: 300px
     background-color: lighten(red, 30%)
 
@@ -64,7 +66,6 @@ export default {
     background-color: $cl-1
 
 .footer
-    height: 100%
-    width: 100%
+    flex-grow: 1
     background-color: $cl-3
 </style>
