@@ -1,71 +1,143 @@
 <template>
-    <div class="flex column page-height">
-        <div class="bg-top">
-            <div class="flex wrap reverse align-center section-top container">
+    <div>
+        <page-header :bIsFixed="true" :headerData="HeaderData"/>
 
-                <div class="image-top sm12 md12 lg4">
-                    picture
-                </div>
+        <div class="flex column page-height landing">
+            <div class="bg-top">
+                <div class="flex wrap reverse align-center section-top container section-padding">
+                    <div class="sm12 md12 lg4">
+                        <div class="profile-pic">
 
-                <div class="content-top sm12 md12 lg8 pa-0">
-                    <div class="px-1">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laboriosam officia ab fuga! 
-                        Quisquam, adipisci incidunt soluta inventore quis nam ab tempora tenetur quidem expedita deserunt, 
-                        itaque cupiditate magnam, at et praesentium quasi. Doloremque odio magni non quas, animi quod.
-                        {{ testData }}
+                        </div>
+                    </div>
+
+                    <div class="content-top sm12 md12 lg8 pa-0">
+                        <div class="pa-1 mx-1 text-block">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laboriosam officia ab fuga! 
+                            Quisquam, adipisci incidunt soluta inventore quis nam ab tempora tenetur quidem expedita deserunt, 
+                            itaque cupiditate magnam, at et praesentium quasi. Doloremque odio magni non quas, animi quod.
+                        </div>
                     </div>
                 </div>
-
             </div>
-        </div>
 
-        <div class="section-mid">
-            Mid Section
-        </div>
+            <section class="projects section-padding">
+                <ul class="flex justify-center wrap container">
+                    <li class="pa-1 ma-0" v-for="(element, i) in ProjectList" :key=i>
+                        <summ :title="element" />
+                    </li>
+                </ul>
+            </section>
 
-        <div class="footer">
-            footer
+            <section class="skills section-padding">
+                <div class="container">
+                    Area to intergrate skills from the linkedin API if its possible. 
+                </div>
+                <img alt="Vue logo" src="../assets/logo.png">
+            </section>
+
+            <section class="about section-padding">
+                <div class="container">
+                    <div>
+                        About Section
+                    </div>
+                    <img alt="Vue logo" src="../assets/logo.png">
+                </div>
+            </section>
+
+            <footer class="footer section-padding">
+                Footer and Contact
+            </footer>
         </div>
     </div>
 </template>
 
 <script>
+import summary from '@/components/Project/Summary.vue'
+import siteHeader from '@/components/Layout/Header.vue'
+
 export default {
+    components: {
+        'summ': summary,
+        'page-header': siteHeader
+    },
+
     name: 'Landing',
 
     data() {
         return {
-            testData: 'Im a Test!'
+            ProjectList: [
+                "MMO Project",
+                "Personal Site",
+                "SaaS 3D editor",
+                "3D Editor",
+                "Platformer Game",
+            ],
+
+            HeaderData: [
+                { label: 'Home', jump: 'landing', bIsIcon: false, bIsLink: false },
+                { label: 'Projects', jump: 'projects', bIsIcon: false, bIsLink: false },
+                { label: 'Skills', jump: 'skills', bIsIcon: false, bIsLink: false },
+                { label: 'About', jump: 'about', bIsIcon: false, bIsLink: false },
+                { label: 'Contact', jump: 'footer', bIsIcon: false, bIsLink: false },
+                { label: 'Reference Journal', jump: '/reference', bIsIcon: false, bIsLink: true },
+            ]
         }
     }
 }
 </script>
 
 <style lang='sass'>
+
 .content-top 
     padding: 20px
-    line-height: 2.5rem
+    line-height: 1.75rem
     text-align: justify
-    font-size: 1.5rem
+    font-size: 1.35rem
     font-family: Calibri, Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif
 
-//.section-top
+.section-top
+    min-height: 550px
+    height: calc(100vh - calc(#{$headerHeight} * 2))
 
 .bg-top
-    background-color: $c-2
+    background-image: url(../assets/forest-haze-25.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
     width: 100%
 
-.image-top
-
+.profile-pic
+    background-image: url(../assets/male-profile-25.jpg)
     height: 300px
-    background-color: lighten(red, 30%)
+    width: 300px
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    border-radius: 50%
+    margin: auto
 
-.section-mid
-    min-height: 500px
+.projects-bg
+    background-color: $cl-1
+
+.projects
     width: 100%
     background-color: $cl-1
+
+.section-padding
+    padding: $headerHeight 0px
+
+.skills
+    background-color: $cd-3
+    color: white
+    height: 700px
+
+.about
+    background-color: $cd-1
+    height: 700px
 
 .footer
     flex-grow: 1
     background-color: $cl-3
+    height: 700px
 </style>

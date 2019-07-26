@@ -1,19 +1,24 @@
 <template>
-    <div class="flex">
-        <Sidebar :data="SideBarData" />
-        <div class="reference-content">
-            Reference
-        </div>
+    <div>
+        <page-header :headerData='HeaderData' />
+        <div class="flex">
+            <Sidebar :data="SideBarData" />
+            <div class="reference-content">
+                Reference
+            </div>
 
+        </div>
     </div>
 </template>
 
 <script>
 import Sidebar from '@/components/Layout/Sidebar.vue'
+import Header from '@/components/Layout/Header.vue'
 
 export default {
     components: {
-        Sidebar
+        Sidebar,
+        'page-header': Header
     },
 
     
@@ -30,6 +35,10 @@ export default {
                 'Nuxt',
                 'Vulkan',
                 'Design Patterns'
+            ],
+
+            HeaderData: [
+                { label: 'Home', jump: '/', bIsIcon: false, bIsLink: true },
             ]
         }
     }
@@ -37,7 +46,9 @@ export default {
 </script>
 
 <style lang="sass">
+
 .reference-content
+    height: 200vh
     min-height: $pageHeight
     width: 100%
 

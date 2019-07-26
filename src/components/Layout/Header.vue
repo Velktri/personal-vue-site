@@ -1,17 +1,20 @@
 <template>
-<div class="header-color">
+<div class="header-color" :style="{ position: (bIsFixed) ? 'fixed': 'relative' }">
     <div class="flex align-center container header">
-        <ul class="flex align-center pl-2">
-            <li class='pr-1' v-for="(headerElement, i) in headerData" :key="i" >
-                <router-link class="header-fonts" :to="headerElement.route"> {{ headerElement.label }} </router-link>
-            </li>
-        </ul>
-
-        <div class="spacer"></div>
-
         <a class="pr-1" href="https://velktri.github.io/personal-site" >
             <img src="@/assets/react.svg" class="header-icon">
         </a>
+
+        <div class="spacer"></div>
+
+        <ul class="flex align-center pl-2">
+            <li class='pr-1' v-for="(headerElement, i) in headerData" :key="i" >
+                <router-link v-if="headerElement.bIsLink" class="header-link" :to="headerElement.jump"> {{ headerElement.label }} </router-link>
+                <div v-else  @click="scrollTo(headerElement.jump)" class="header-link">{{ headerElement.label }}</div>
+            </li>
+        </ul>
+
+        <!--<div @click="dropDown()" style="font-size:24px" class="fa fa-bars header-link"></div>-->
     </div>
 </div>
 
@@ -25,14 +28,32 @@ export default {
         headerData: {
             type: Array,
             default: () => []
+        },
+
+        bIsFixed: {
+            type: Boolean,
+            default: false
         }
     },
 
     data() {
         return {
             AccountMenu: [
-                { label: 'Account', route: 'account' },
+                { label: 'Account', jump: 'account' },
             ]
+        }
+    },
+
+    methods: {
+        scrollTo(inScroll) {
+            window.scrollBy({ 
+                top: document.querySelector('.' + inScroll).getBoundingClientRect().top, 
+                behavior: 'smooth' 
+            })
+        },
+
+        dropDown() {
+            //console.log('drop down!')
         }
     }
 }
@@ -40,15 +61,23 @@ export default {
 
 
 <style lang="sass">
+
+//@media screen and (max-width: 500px)
+
+//@media screen and (min-width: 500px)
+
+
 .header
     height: $headerHeight
 
-.header-fonts
+.header-link
     font-size: 1.2rem
-    text-decoration-color: black
+    color: white
+    cursor: pointer
 
 .header-color
-    background-image: linear-gradient(to right, $c-5, $cd-1)
+    background-color: rgba(0, 0, 0, 0.5)
+    width: 100%
 
 .header-icon
     height: 2rem

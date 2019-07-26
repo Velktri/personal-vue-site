@@ -28,6 +28,7 @@ export default {
     height: $pageHeight
     background-color: rgb(141, 83, 141)
     float: left
+    position: fixed
 
 .sidebar-list
     padding-left: .5rem
