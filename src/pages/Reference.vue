@@ -1,7 +1,7 @@
 <template>
     <div>
-        <page-header :headerData='HeaderData' />
-        <div class="flex">
+        <page-header :bIsFixed="true" :headerData='HeaderData' />
+        <div class="flex header-padding">
             <Sidebar :data="SideBarData" />
             <div class="reference-content">
                 Reference
@@ -46,6 +46,9 @@ export default {
 </script>
 
 <style lang="sass">
+
+.header-padding
+    padding-top: $headerHeight
 
 .reference-content
     height: 200vh
