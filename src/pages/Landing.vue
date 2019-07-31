@@ -5,13 +5,11 @@
         <div class="flex column page-height landing">
             <div class="bg-top">
                 <div class="flex wrap reverse align-center section-top container section-padding">
-                    <div class="sm12 md12 lg4">
-                        <div class="profile-pic">
-
-                        </div>
+                    <div class="sm12 md12 lg4 mt-1">
+                        <img class="profile-pic" src="../assets/male-profile.jpg" />
                     </div>
 
-                    <div class="content-top sm12 md12 lg8 pa-0">
+                    <div class="content-top sm12 md12 lg8 pa-0 mt-1">
                         <div class="pa-1 mx-1 text-block">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laboriosam officia ab fuga! 
                             Quisquam, adipisci incidunt soluta inventore quis nam ab tempora tenetur quidem expedita deserunt, 
@@ -31,7 +29,7 @@
 
             <section class="skills section-padding">
                 <div class="container">
-                    Area to intergrate skills from the linkedin API if its possible. 
+                    Area to intergrate skills from the linkedin API if its possible.
                 </div>
                 <img alt="Vue logo" src="../assets/logo.png">
             </section>
@@ -96,8 +94,8 @@ export default {
     font-family: Calibri, Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif
 
 .section-top
-    min-height: 550px
-    height: calc(100vh - calc(#{$headerHeight} * 2))
+    //min-height: 550px
+    min-height: calc(100vh - calc(#{$headerHeight} * 2))
 
 .bg-top
     background-image: url(../assets/forest-haze-25.jpg)
@@ -107,9 +105,9 @@ export default {
     width: 100%
 
 .profile-pic
-    background-image: url(../assets/male-profile-25.jpg)
-    height: 300px
-    width: 300px
+    height: auto
+    width: 90%
+    max-width: 320px
     background-repeat: no-repeat
     background-size: cover
     background-position: center
