@@ -2,7 +2,7 @@
 <div class="header-color" :style="{ position: (bIsFixed) ? 'fixed': 'relative' }">
     <div class="container header">
         <div class="flex align-center justity-between header-start">
-            <img @click="scrollTo('landing')" src="@/assets/react.svg" class="header-logo header-cursor">
+            <img @click="scrollTo('landing')" src="@/assets/logo.png" class="header-logo header-cursor">
 
             <div @click="dropDown()" style="font-size:24px" class="fa fa-bars header-icon header-cursor pr-1"></div>
         </div>
@@ -162,6 +162,7 @@ export default {
     width: 100%
 
 .header-logo
-    height: 2rem
+    height: 1.9rem
+    padding-left: .6rem
 
 </style>
