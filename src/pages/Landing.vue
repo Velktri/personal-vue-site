@@ -75,7 +75,6 @@ export default {
             ],
 
             HeaderData: [
-                { label: 'Home', jump: 'landing', bIsIcon: false, bIsLink: false },
                 { label: 'Projects', jump: 'projects', bIsIcon: false, bIsLink: false },
                 { label: 'Skills', jump: 'skills', bIsIcon: false, bIsLink: false },
                 { label: 'About', jump: 'about', bIsIcon: false, bIsLink: false },

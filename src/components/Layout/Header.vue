@@ -1,20 +1,22 @@
 <template>
 <div class="header-color" :style="{ position: (bIsFixed) ? 'fixed': 'relative' }">
-    <div class="flex align-center container header">
-        <a class="pr-1" href="https://velktri.github.io/personal-site" >
-            <img src="@/assets/react.svg" class="header-icon">
-        </a>
+    <div class="container header">
+        <div class="flex align-center justity-between header-start">
+            <img @click="scrollTo('landing')" src="@/assets/react.svg" class="header-logo header-cursor">
 
-        <div class="spacer"></div>
+            <div @click="dropDown()" style="font-size:24px" class="fa fa-bars header-icon header-cursor pr-1"></div>
+        </div>
 
-        <ul class="flex align-center pl-2">
-            <li class='pr-1' v-for="(headerElement, i) in headerData" :key="i" >
+
+        <ul class="flex header-ul">
+            <li class='pr-1 header-list' v-for="(headerElement, i) in headerData" :key="i">
                 <router-link v-if="headerElement.bIsLink" class="header-link" :to="headerElement.jump"> {{ headerElement.label }} </router-link>
-                <div v-else  @click="scrollTo(headerElement.jump)" class="header-link">{{ headerElement.label }}</div>
+
+                <div v-else  @click="scrollTo(headerElement.jump)" class="header-link header-cursor">
+                    {{ headerElement.label }}
+                </div>
             </li>
         </ul>
-
-        <!--<div @click="dropDown()" style="font-size:24px" class="fa fa-bars header-link"></div>-->
     </div>
 </div>
 
@@ -40,8 +42,20 @@ export default {
         return {
             AccountMenu: [
                 { label: 'Account', jump: 'account' },
-            ]
+            ],
+
+            bIsMobile: true
         }
+    },
+
+    mounted() {
+        window.addEventListener('resize', this.handleResize)
+        this.handleResize()
+        this.initDropdown()
+    },
+
+    beforeDestroy() {
+        window.removeEventListener('resize', this.handleResize)
     },
 
     methods: {
@@ -53,7 +67,30 @@ export default {
         },
 
         dropDown() {
-            //console.log('drop down!')
+            let hStyle = this.$el.querySelector('.header-ul').style
+            if (hStyle.display === 'none') {
+                hStyle.display = 'flex'
+            } else {
+                hStyle.display = 'none'
+            }
+        },
+
+        handleResize() {
+            if (window.innerWidth > 500) {
+                this.$el.querySelector('.header-ul').style.display = 'flex'
+                this.bIsMobile = false
+            } else {
+                if (!this.bIsMobile) {
+                    this.$el.querySelector('.header-ul').style.display = 'none'
+                    this.bIsMobile = true
+                }
+            }
+        },
+
+        initDropdown() {
+            if (this.bIsMobile) {
+                this.$el.querySelector('.header-ul').style.display = 'none'
+            }
         }
     }
 }
@@ -62,24 +99,69 @@ export default {
 
 <style lang="sass">
 
-//@media screen and (max-width: 500px)
+@media screen and (max-width: 500px)
+    .header-list
+        background-color: rgba(0, 0, 0, 0.6)
+        padding: .25rem 0
+        display: flex
+        align-items: center
+        padding-left: 1rem
+        //justify-content: center
+        //border-bottom: 1px solid black 
 
-//@media screen and (min-width: 500px)
+    .header-list:first-child
+        padding-top: .75rem
+        border-top: 1px solid white 
 
+    .header-list:last-child
+        padding-bottom: .75rem
+
+    .header-icon
+        display: flex
+        color: white
+
+    .header
+        flex-flow: column
+
+    .header-start
+        width: 100%
+        height: $headerHeight
+
+    .header-ul
+        flex-flow: column
+        width: 100%
+        display: none
+
+@media screen and (min-width: 500px)
+    .header-icon
+        display: none
+
+    .header-list
+        display: flex
+
+    .header
+        flex-flow: row
+        display: flex
+        align-items: center
+        justify-content: space-between
 
 .header
     height: $headerHeight
 
+.header-cursor
+    cursor: pointer
+
 .header-link
     font-size: 1.2rem
     color: white
-    cursor: pointer
+
 
 .header-color
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.6)
+    z-index: 10
     width: 100%
 
-.header-icon
+.header-logo
     height: 2rem
 
 </style>
