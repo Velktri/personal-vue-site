@@ -2,14 +2,14 @@
 <div class="header-color" :style="{ position: (bIsFixed) ? 'fixed': 'relative' }">
     <div class="container header">
         <div class="flex align-center justity-between header-start">
-            <img @click="scrollTo('landing')" src="@/assets/logo.png" class="header-logo header-cursor">
+            <img @click="scrollTo('landing')" src="@/assets/logo.png" class="header-logo header-cursor noSelect">
 
-            <div @click="dropDown()" style="font-size:24px" class="fa fa-bars header-icon header-cursor pr-1"></div>
+            <div @click="dropDown()" style="font-size:24px" class="fa fa-bars header-icon header-cursor pr-1 noSelect"></div>
         </div>
 
 
         <ul class="flex header-ul">
-            <li class='pr-1 header-list' v-for="(headerElement, i) in headerData" :key="i">
+            <li class='pr-1 header-list noSelect' v-for="(headerElement, i) in headerData" :key="i">
                 <router-link v-if="headerElement.bIsLink" class="header-link" :to="headerElement.jump"> {{ headerElement.label }} </router-link>
 
                 <div v-else  @click="scrollTo(headerElement.jump)" class="header-link header-cursor">
