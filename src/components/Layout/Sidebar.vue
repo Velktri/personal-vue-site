@@ -31,13 +31,13 @@ export default {
 <style lang='sass'>
 .sidebar-layout
     max-width: 100%
-    height: $pageHeight
+    min-height: $pageHeight
     background-color: rgb(141, 83, 141)
-    float: left
     position: fixed
 
 .sidebar-list
     padding: 0 1rem
     text-align: left
+    white-space: nowrap
 
 </style>
