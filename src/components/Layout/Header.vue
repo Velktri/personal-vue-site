@@ -113,8 +113,6 @@ export default {
         display: flex
         align-items: center
         padding-left: 1rem
-        //justify-content: center
-        //border-bottom: 1px solid black 
 
     .header-list:first-child
         padding-top: .75rem

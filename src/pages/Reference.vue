@@ -25,16 +25,70 @@ export default {
     data() {
         return {
             SideBarData: [
-                'Test Driven Design',
-                'React',
-                'Vue',
-                'Git',
-                'Graphics',
-                'CSS',
-                'ASP.Net',
-                'Nuxt',
-                'Vulkan',
-                'Design Patterns'
+                {
+                    name: 'Test Driven Design',
+                    children: []
+                },
+                {
+                    name: 'React',
+                    children: []
+                },
+                {
+                    name: 'Vue',
+                    children: [
+                        {
+                            name: 'Nuxt',
+                            children: []
+                        },
+                    ]
+                },
+                {
+                    name: 'Git',
+                    children: []
+                },
+                {
+                    name: 'Graphics',
+                    children: [
+                        {
+                            name: 'OpenGL',
+                            children: [
+                                {
+                                    name: 'Fixed Function Pipeline',
+                                    children: []
+                                },
+                                {
+                                    name: 'Modern OpenGl Pipeline',
+                                    children: []
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Vulkan',
+                            children: []
+                        }
+                    ]
+                },
+                {
+                    name: 'CSS',
+                    children: []
+                },
+                {
+                    name: 'ASP.Net',
+                    children: []
+                },
+                {
+                    name: 'Design Patterns',
+                    children: [
+                        {
+                            name: 'Singleton',
+                            children: []
+                        },
+                        {
+                            name: 'Command Pattern',
+                            children: []
+                        }
+                    ]
+                },
             ],
 
             HeaderHomeData: { label: 'Home', jump: '/', bIsIcon: true, bIsLink: true },
