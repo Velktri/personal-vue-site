@@ -2,7 +2,9 @@
 <div class="header-color" :style="{ position: (bIsFixed) ? 'fixed': 'relative' }">
     <div class="container header">
         <div class="flex align-center justity-between header-start">
-            <img @click="scrollTo('landing')" src="@/assets/logo.png" class="header-logo header-cursor noSelect">
+            <router-link v-if="homeLink.bIsLink" class="header-icon header-cursor logoPic noSelect" :to="homeLink.jump"></router-link>
+
+            <img v-else @click="scrollTo(homeLink.jump)" src="@/assets/logo.png" class="header-logo header-cursor noSelect">
 
             <div @click="dropDown()" style="font-size:24px" class="fa fa-bars header-icon header-cursor pr-1 noSelect"></div>
         </div>
@@ -27,6 +29,11 @@ export default {
     name: 'page-header',
 
     props: {
+        homeLink: {
+            type: Object,
+            default: () => {}
+        },
+
         headerData: {
             type: Array,
             default: () => []
@@ -164,5 +171,14 @@ export default {
 .header-logo
     height: 1.9rem
     padding-left: .6rem
+
+.logoPic
+    background-image: url("../../assets/logo.png")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+    width: 31px
+    height: 31px
+    margin-left: .6rem
 
 </style>

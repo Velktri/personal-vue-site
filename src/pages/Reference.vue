@@ -1,6 +1,6 @@
 <template>
     <div>
-        <page-header :bIsFixed="true" :headerData='HeaderData' />
+        <page-header :bIsFixed="true" :homeLink="HeaderHomeData" />
         <div class="flex header-padding">
             <Sidebar :data="SideBarData" />
             <div class="reference-content">
@@ -37,9 +37,7 @@ export default {
                 'Design Patterns'
             ],
 
-            HeaderData: [
-                { label: 'Home', jump: '/', bIsIcon: false, bIsLink: true },
-            ]
+            HeaderHomeData: { label: 'Home', jump: '/', bIsIcon: true, bIsLink: true },
         }
     }
 }

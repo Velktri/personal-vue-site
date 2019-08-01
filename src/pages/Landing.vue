@@ -1,6 +1,6 @@
 <template>
     <div>
-        <page-header :bIsFixed="true" :headerData="HeaderData"/>
+        <page-header :bIsFixed="true" :homeLink="HeaderHomeData" :headerData="HeaderData"/>
 
         <div class="flex column page-height landing">
             <div class="bg-top">
@@ -71,6 +71,8 @@ export default {
                 "3D Editor",
                 "Platformer Game",
             ],
+
+            HeaderHomeData: { label: 'Home', jump: 'landing', bIsLink: false },
 
             HeaderData: [
                 { label: 'Projects', jump: 'projects', bIsIcon: false, bIsLink: false },
