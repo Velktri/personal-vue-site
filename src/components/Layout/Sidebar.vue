@@ -30,7 +30,7 @@ export default {
 
 <style lang='sass'>
 .sidebar-layout
-    //width: 200px
+    max-width: 100%
     height: $pageHeight
     background-color: rgb(141, 83, 141)
     float: left

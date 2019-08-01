@@ -51,12 +51,12 @@
 </template>
 
 <script>
-import summary from '@/components/Project/Summary.vue'
+import summ from '@/components/Project/Summary.vue'
 import siteHeader from '@/components/Layout/Header.vue'
 
 export default {
     components: {
-        'summ': summary,
+        summ,
         'page-header': siteHeader
     },
 
