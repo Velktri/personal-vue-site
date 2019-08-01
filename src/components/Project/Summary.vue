@@ -1,19 +1,29 @@
 <template>
-    <div class="sum-container">
-        <div class="pt-2">
-            {{ title }}
+    <div>
+        <div class="border-all image" />
+        <div class="caption border-bottom flex align-center justify-center">
+            <div class="pa-1">
+                {{ data.title }}
+            </div>
         </div>
     </div>
+
+        <!--<div class="summary-title">
+            
+        </div>
+        <div class="summary-content">
+            {{ data.summary }}
+        </div>-->
 </template>
 
 <script>
 export default {
-    name: 'summary',
+    name: 'summ',
 
     props: {
-        title: {
-            type: String,
-            default: '',
+        data: {
+            type: Object,
+            default: () => {},
             required: true
         },
     }
@@ -21,11 +31,38 @@ export default {
 </script>
 
 <style lang='sass'>
-.sum-container 
-    width: 300px
-    height: 300px
-    border-radius: .5rem
+$border-rounding: .5rem
+$caption-height: 80px
 
-    background-color: $cl-3
+.border-bottom
+    border-radius: 0 0 $border-rounding $border-rounding
+
+.border-top
+    border-radius: $border-rounding $border-rounding 0 0
+
+.border-all
+    border-radius: $border-rounding
+
+.image
+    width: 100%
+    background-position: center
+    padding-bottom: 100%
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+    background-image: url('../../assets/code.jpg')
+
+
+.summary-content
+    padding: 0.5rem
+    text-align: left
+    max-width: 100%
+
+.caption
+    background-color: rgba(0, 0, 0, 0.6)
+    height: $caption-height
+    width: 100%
+    margin-top: calc(-1 * #{$caption-height})
+    color: white
 
 </style>

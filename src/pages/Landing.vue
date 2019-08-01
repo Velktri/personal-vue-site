@@ -21,8 +21,8 @@
 
             <section class="projects section-padding">
                 <ul class="flex justify-center wrap container">
-                    <li class="pa-1 ma-0" v-for="(element, i) in ProjectList" :key=i>
-                        <summ :title="element" />
+                    <li class="project-item" v-for="(element, i) in ProjectList" :key=i>
+                        <summ :data="element" />
                     </li>
                 </ul>
             </section>
@@ -65,11 +65,30 @@ export default {
     data() {
         return {
             ProjectList: [
-                "MMO Project",
-                "Personal Site",
-                "SaaS 3D editor",
-                "3D Editor",
-                "Platformer Game",
+                {
+                    title: 'MMO Project',
+                    summary: ''
+                },
+                {
+                    title: 'Test',
+                    summary: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam natus tempore est quam ullam voluptatibus ut impedit iure explicabo praesentium quis optio omnis quos itaque dicta vel perspiciatis corrupti excepturi voluptatum unde, fuga error! Perferendis minus sunt obcaecati quas, assumenda.'
+                },
+                {
+                    title: 'Personal Site',
+                    summary: ''
+                },
+                {
+                    title: 'SaaS 3D editor',
+                    summary: ''
+                },
+                {
+                    title: '3D Editor',
+                    summary: ''
+                },
+                {
+                    title: 'Platformer Game',
+                    summary: ''
+                }
             ],
 
             HeaderHomeData: { label: 'Home', jump: 'landing', bIsLink: false },
@@ -87,6 +106,23 @@ export default {
 </script>
 
 <style lang='sass'>
+
+
+
+@media screen and (max-width: 500px)
+    .project-item
+        width: 98%
+        margin: 1%
+
+@media screen and (min-width: 500px)
+    .project-item
+        width: 48%
+        margin: 1%
+
+@media screen and (min-width: 1000px)
+    .project-item
+        width: 31%
+        margin: 1%
 
 .content-top 
     padding: 20px

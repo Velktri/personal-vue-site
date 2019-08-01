@@ -150,6 +150,7 @@ export default {
         align-items: center
         justify-content: space-between
 
+
 .header
     height: $headerHeight
 
@@ -160,7 +161,6 @@ export default {
     font-size: 1.2rem
     color: white
 
-
 .header-color
     background-color: rgba(0, 0, 0, 0.6)
     z-index: 10
@@ -169,14 +169,5 @@ export default {
 .header-logo
     height: 1.9rem
     padding-left: .6rem
-
-.logoPic
-    background-image: url("../../assets/logo.png")
-    background-position: center
-    background-repeat: no-repeat
-    background-size: contain
-    width: 31px
-    height: 31px
-    margin-left: .6rem
 
 </style>
