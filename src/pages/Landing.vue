@@ -153,11 +153,11 @@ export default {
     margin: auto
 
 .projects-bg
-    background-color: $cl-1
+    background-color: $cd-3 //$cl-1
 
 .projects
     width: 100%
-    background-color: $cl-1
+    background-color: $cd-3 //$cl-1
 
 .section-padding
     padding: $headerHeight 0px

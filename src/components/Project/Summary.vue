@@ -1,19 +1,19 @@
 <template>
     <div>
-        <div class="border-all image" />
-        <div class="caption border-bottom flex align-center justify-center">
-            <div class="pa-1">
-                {{ data.title }}
+        <div class="border-all image"> 
+            <div class="caption border-bottom">
+                <div class="caption-title">
+                    {{ data.title }}
+                </div>
+
+                <div class="growing-line" />
+
+                <div class="summary-content">
+                    {{ data.summary }}
+                </div>
             </div>
         </div>
     </div>
-
-        <!--<div class="summary-title">
-            
-        </div>
-        <div class="summary-content">
-            {{ data.summary }}
-        </div>-->
 </template>
 
 <script>
@@ -32,7 +32,8 @@ export default {
 
 <style lang='sass'>
 $border-rounding: .5rem
-$caption-height: 80px
+$caption-height: 60px
+$transition-speed: 1s
 
 .border-bottom
     border-radius: 0 0 $border-rounding $border-rounding
@@ -51,18 +52,52 @@ $caption-height: 80px
     background-repeat: no-repeat
     background-size: cover
     background-image: url('../../assets/code.jpg')
+    position: relative
+
+
+.caption
+    background-color: rgba(0, 0, 0, 0.5)
+    height: $caption-height
+    width: 100%
+    color: white
+    position: absolute
+    bottom: 0
+    padding-top: 0
+    display: block
+
+    -webkit-transition: height $transition-speed, padding-bottom $transition-speed, background-color $transition-speed, padding-top $transition-speed
+    transition: height $transition-speed, padding-bottom $transition-speed, background-color $transition-speed, padding-top $transition-speed
+
+.image:hover .caption
+    height: 0px
+    padding-bottom: 100%
+    display: block
+    background-color: rgba(0, 0, 0, 0.7)
+    border-radius: $border-rounding
+
+
+.caption-title
+    padding: 20px 0
+
+.image:hover .caption-title
+    padding-top: 20px
+
+
+.growing-line
+    animation-delay: $transition-speed
+
+.image:hover .growing-line
+    border-bottom: 1px solid white
 
 
 .summary-content
-    padding: 0.5rem
+    padding: 1rem
     text-align: left
     max-width: 100%
+    display: none
+    transition: display 2s
 
-.caption
-    background-color: rgba(0, 0, 0, 0.6)
-    height: $caption-height
-    width: 100%
-    margin-top: calc(-1 * #{$caption-height})
-    color: white
+.image:hover .summary-content
+    display: block
 
 </style>
