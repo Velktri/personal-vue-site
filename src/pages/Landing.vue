@@ -67,27 +67,23 @@ export default {
             ProjectList: [
                 {
                     title: 'MMO Project',
-                    summary: ''
-                },
-                {
-                    title: 'Test',
                     summary: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam natus tempore est quam ullam voluptatibus ut impedit iure explicabo praesentium quis optio omnis quos itaque dicta vel perspiciatis corrupti excepturi voluptatum unde, fuga error! Perferendis minus sunt obcaecati quas, assumenda.'
                 },
                 {
                     title: 'Personal Site',
-                    summary: ''
+                    summary: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam natus tempore est quam ullam voluptatibus ut impedit iure explicabo praesentium quis optio omnis quos itaque dicta vel perspiciatis corrupti excepturi voluptatum unde, fuga error! Perferendis minus sunt obcaecati quas, assumenda.'
                 },
                 {
                     title: 'SaaS 3D editor',
-                    summary: ''
+                    summary: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam natus tempore est quam ullam voluptatibus ut impedit iure explicabo praesentium quis optio omnis quos itaque dicta vel perspiciatis corrupti excepturi voluptatum unde, fuga error! Perferendis minus sunt obcaecati quas, assumenda.'
                 },
                 {
                     title: '3D Editor',
-                    summary: ''
+                    summary: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam natus tempore est quam ullam voluptatibus ut impedit iure explicabo praesentium quis optio omnis quos itaque dicta vel perspiciatis corrupti excepturi voluptatum unde, fuga error! Perferendis minus sunt obcaecati quas, assumenda.'
                 },
                 {
                     title: 'Platformer Game',
-                    summary: ''
+                    summary: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam natus tempore est quam ullam voluptatibus ut impedit iure explicabo praesentium quis optio omnis quos itaque dicta vel perspiciatis corrupti excepturi voluptatum unde, fuga error! Perferendis minus sunt obcaecati quas, assumenda.'
                 }
             ],
 
@@ -132,7 +128,6 @@ export default {
     font-family: Calibri, Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif
 
 .section-top
-    //min-height: 550px
     min-height: calc(100vh - calc(#{$headerHeight} * 2))
 
 .bg-top
@@ -153,26 +148,26 @@ export default {
     margin: auto
 
 .projects-bg
-    background-color: $cd-3 //$cl-1
+    background-color: $cd-3
 
 .projects
     width: 100%
-    background-color: $cd-3 //$cl-1
+    background-color: $cd-3
 
 .section-padding
     padding: $headerHeight 0px
 
 .skills
-    background-color: $cd-3
+    background-color: $cd-1
     color: white
     height: 700px
 
 .about
-    background-color: $cd-1
+    background-color: $cd-3
     height: 700px
 
 .footer
     flex-grow: 1
-    background-color: $cl-3
+    background-color: $cd-1
     height: 700px
 </style>

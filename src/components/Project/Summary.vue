@@ -2,13 +2,13 @@
     <div>
         <div class="border-all image"> 
             <div class="caption border-bottom">
-                <div class="caption-title">
+                <div class="caption-title font-shadow">
                     {{ data.title }}
                 </div>
 
                 <div class="growing-line" />
 
-                <div class="summary-content">
+                <div class="summary-content font-shadow">
                     {{ data.summary }}
                 </div>
             </div>
@@ -31,9 +31,14 @@ export default {
 </script>
 
 <style lang='sass'>
+/* Styling */
 $border-rounding: .5rem
 $caption-height: 60px
-$transition-speed: 1s
+
+/* Transitions */
+$frame-collapse: 0.4s
+$frame-rising: 0.7s
+
 
 .border-bottom
     border-radius: 0 0 $border-rounding $border-rounding
@@ -46,8 +51,8 @@ $transition-speed: 1s
 
 .image
     width: 100%
-    background-position: center
     padding-bottom: 100%
+    background-position: center
     background-position: center center
     background-repeat: no-repeat
     background-size: cover
@@ -65,8 +70,8 @@ $transition-speed: 1s
     padding-top: 0
     display: block
 
-    -webkit-transition: height $transition-speed, padding-bottom $transition-speed, background-color $transition-speed, padding-top $transition-speed
-    transition: height $transition-speed, padding-bottom $transition-speed, background-color $transition-speed, padding-top $transition-speed
+    -webkit-transition: height $frame-collapse, padding-bottom $frame-collapse, background-color $frame-collapse, padding-top $frame-collapse
+    transition: height $frame-collapse, padding-bottom $frame-collapse, background-color $frame-collapse, padding-top $frame-collapse
 
 .image:hover .caption
     height: 0px
@@ -74,30 +79,36 @@ $transition-speed: 1s
     display: block
     background-color: rgba(0, 0, 0, 0.7)
     border-radius: $border-rounding
-
+    transition: height $frame-rising, padding-bottom $frame-rising, background-color $frame-rising, padding-top $frame-rising
 
 .caption-title
     padding: 20px 0
 
-.image:hover .caption-title
-    padding-top: 20px
-
 
 .growing-line
-    animation-delay: $transition-speed
+    transition: opacity 0.2s
+    opacity: 0
 
 .image:hover .growing-line
+    opacity: 1
     border-bottom: 1px solid white
+    transition: opacity 1s
+    transition-delay: 0.2s
 
 
 .summary-content
     padding: 1rem
     text-align: left
     max-width: 100%
-    display: none
-    transition: display 2s
+    visibility: hidden
+    opacity: 0
+    transition: opacity 0.2s
+    transition-delay: 0.2s
 
 .image:hover .summary-content
-    display: block
+    visibility: visible
+    opacity: 1
+    transition: opacity 1s
+    transition-delay: 0.2s
 
 </style>
