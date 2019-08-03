@@ -2,13 +2,13 @@
     <div>
         <div class="border-all image"> 
             <div class="caption border-bottom">
-                <div class="caption-title font-shadow">
+                <div class="caption-title font-shadow noSelect">
                     {{ data.title }}
                 </div>
 
                 <div class="growing-line" />
 
-                <div class="summary-content font-shadow">
+                <div class="summary-content font-shadow noSelect">
                     {{ data.summary }}
                 </div>
             </div>

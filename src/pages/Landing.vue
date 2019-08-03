@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="content-top sm12 md12 lg8 pa-0 mt-1">
-                        <div class="pa-1 mx-1 text-block">
+                        <div class="pa-1 mx-1 text-block noSelect">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laboriosam officia ab fuga! 
                             Quisquam, adipisci incidunt soluta inventore quis nam ab tempora tenetur quidem expedita deserunt, 
                             itaque cupiditate magnam, at et praesentium quasi. Doloremque odio magni non quas, animi quod.
@@ -28,7 +28,7 @@
             </section>
 
             <section class="skills section-padding">
-                <div class="container">
+                <div class="container noSelect">
                     Area to intergrate skills from the linkedin API if its possible.
                 </div>
                 <img alt="Vue logo" src="../assets/logo.png">
@@ -36,14 +36,14 @@
 
             <section class="about section-padding">
                 <div class="container">
-                    <div>
+                    <div class="noSelect">
                         About Section
                     </div>
                     <img alt="Vue logo" src="../assets/logo.png">
                 </div>
             </section>
 
-            <footer class="footer section-padding">
+            <footer class="footer section-padding noSelect">
                 Footer and Contact
             </footer>
         </div>
@@ -107,8 +107,8 @@ export default {
 
 @media screen and (max-width: 500px)
     .project-item
-        width: 98%
-        margin: 1%
+        width: 96%
+        margin: 2%
 
 @media screen and (min-width: 500px)
     .project-item

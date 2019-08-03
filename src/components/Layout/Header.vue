@@ -105,8 +105,9 @@ export default {
 
 
 <style lang="sass">
+$mobile-bp: 500px
 
-@media screen and (max-width: 500px)
+@media screen and (max-width: $mobile-bp)
     .header-list
         background-color: rgba(0, 0, 0, 0.6)
         padding: .25rem 0
@@ -137,7 +138,7 @@ export default {
         width: 100%
         display: none
 
-@media screen and (min-width: 500px)
+@media screen and (min-width: $mobile-bp)
     .header-icon
         display: none
 
